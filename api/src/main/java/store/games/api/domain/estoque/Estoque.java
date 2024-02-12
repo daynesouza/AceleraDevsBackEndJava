@@ -20,7 +20,7 @@ public class Estoque {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "produto_cpf")
+    @JoinColumn(name = "produto_cod")
     private Product produto;
 
     @Column(name = "data_referencia")
