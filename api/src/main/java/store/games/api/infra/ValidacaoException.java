@@ -1,4 +1,4 @@
-package store.games.api.domain;
+package store.games.api.infra;
 
 import jakarta.xml.bind.ValidationException;
 

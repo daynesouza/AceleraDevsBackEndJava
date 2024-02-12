@@ -3,7 +3,7 @@ package store.games.api.domain.pedido;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import store.games.api.domain.ValidacaoException;
+import store.games.api.infra.ValidacaoException;
 import store.games.api.domain.client.ClientRepository;
 import store.games.api.domain.itemPedido.ItemPedido;
 import store.games.api.domain.product.ProductRepository;
@@ -30,12 +30,12 @@ public class FazerPedido {
         adicionarItemPedido(dados.listaItens(), pedido);
     }
 
+
     public void adicionarItemPedido(List<ListaItens> itens, Pedido pedido){
         itens.forEach(item -> {
-            //Perguntar o motivo do produto existindo na base, o retorno ser "false"
-//            if (!clientRepository.existsById(item.cod())){
-//                throw new ValidacaoException("COD do produto não está cadastrado!");
-//            }
+            if (!productRepository.existsById(item.cod())){
+                throw new ValidacaoException("COD do produto não está cadastrado!");
+            }
 
             var produto = productRepository.findById(item.cod()).get();
             pedido.adicionarItem( new ItemPedido(item.quantidade(), pedido, produto));

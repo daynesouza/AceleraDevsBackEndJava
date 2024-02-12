@@ -7,7 +7,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import store.games.api.domain.ValidacaoException;
 import store.games.api.domain.client.Client;
 import store.games.api.domain.client.ClientRepository;
 import store.games.api.domain.client.DadosCadastroCliente;
@@ -57,10 +56,6 @@ public class ClientController {
 
     @GetMapping("/{cpf}")
     public ResponseEntity detalhar(@PathVariable String cpf){
-        if (!repository.existsById(cpf)){
-            throw new ValidacaoException("CPF do usuário não está cadastrado!");
-        }
-
         var client = repository.getReferenceById(cpf);
 
         return ResponseEntity.ok(new DadosListagemCliente(client));
