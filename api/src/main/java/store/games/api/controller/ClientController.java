@@ -7,10 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import store.games.api.domain.client.Client;
-import store.games.api.domain.client.ClientRepository;
-import store.games.api.domain.client.DadosCadastroCliente;
-import store.games.api.domain.client.DadosListagemCliente;
+import store.games.api.domain.client.*;
 
 import java.util.List;
 
@@ -19,6 +16,8 @@ import java.util.List;
 public class ClientController {
     @Autowired
     private ClientRepository repository;
+    @Autowired
+    private ListarTodosDadosCliente listarDadosCliente;
 
     @PostMapping
     @Transactional
@@ -56,8 +55,8 @@ public class ClientController {
 
     @GetMapping("/{cpf}")
     public ResponseEntity detalhar(@PathVariable String cpf){
-        var client = repository.getReferenceById(cpf);
+        var dados = listarDadosCliente.localizaCliente(cpf);
 
-        return ResponseEntity.ok(new DadosListagemCliente(client));
+        return ResponseEntity.ok(dados);
     }
 }
