@@ -8,6 +8,8 @@ import store.games.api.domain.client.ClientRepository;
 import store.games.api.domain.itemPedido.ItemPedido;
 import store.games.api.domain.product.ProductRepository;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class FazerPedido {
@@ -19,7 +21,7 @@ public class FazerPedido {
     @Autowired
     private ProductRepository productRepository;
     @Transactional
-    public void cadastrarDadosPedido(DadosPedido dados){
+    public DadosPedidoRetorno cadastrarDadosPedido(DadosPedido dados){
         if (!clientRepository.existsById(dados.cpf())){
             throw new ValidacaoException("CPF do usuário não está cadastrado!");
         }
@@ -28,6 +30,8 @@ public class FazerPedido {
         var pedido = new Pedido(cliente, dados.data());
         pedidoRepository.save(pedido);
         adicionarItemPedido(dados.listaItens(), pedido);
+
+        return new DadosPedidoRetorno(cliente.getName(), pedido.getValorTotal(), dados.data());
     }
 
 

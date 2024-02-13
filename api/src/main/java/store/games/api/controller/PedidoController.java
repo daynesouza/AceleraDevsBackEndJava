@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import store.games.api.domain.pedido.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -22,12 +23,15 @@ public class PedidoController {
 
     @PostMapping
     public ResponseEntity cadastroCompra(@RequestBody List<DadosPedido> dados, UriComponentsBuilder uriBuilder){
+        List<DadosPedidoRetorno> pedidoRetorno = new ArrayList<>();
 
-        dados.forEach( pedido -> fazerPedido.cadastrarDadosPedido(pedido));
+        dados.forEach( pedido -> {
+            pedidoRetorno.add(fazerPedido.cadastrarDadosPedido(pedido));
+        });
 
         var uri = uriBuilder.path("/pedido/cadastro").build().toUri();
 
-        return ResponseEntity.created(uri).body(dados);
+        return ResponseEntity.created(uri).body(pedidoRetorno);
     }
 
     @GetMapping
