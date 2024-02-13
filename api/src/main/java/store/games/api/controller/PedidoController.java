@@ -39,5 +39,6 @@ public class PedidoController {
         //Perguntar ao professor o porque do código dar erro de loop se retornar direto o objeto retornado pelo banco, no lugar do DTO.
         var page = repository.findAll(paginacao).map(DadosListagemPedido::new);
         return ResponseEntity.ok(page);
+
     }
 }
