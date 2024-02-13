@@ -42,13 +42,14 @@ public class CadastrarPlanilhaDePedidos {
                 List<Cell> cells = (List<Cell>) converterLista(row.cellIterator());
 
                 var codigoProduto = cells.get(0).getStringCellValue();
-                var cpfUsuario = cells.get(1).getStringCellValue();
+                var cpfUsuario = String.valueOf( (int) cells.get(1).getNumericCellValue());
                 var quantidade = (int) cells.get(2).getNumericCellValue();
                 var data = cells.get(3).getDateCellValue();
                 var listaitens = new ArrayList<ListaItens>();
                 listaitens.add( new ListaItens(codigoProduto, quantidade));
 
                 pedidosRetorno.add(fazerPedido.cadastrarDadosPedido( new DadosPedido(cpfUsuario, data, listaitens)));
+
             });
 
         }catch (IOException e) {
