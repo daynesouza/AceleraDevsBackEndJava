@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 @Table(name = "pedidos")
-@Entity(name = "pedido")
+@Entity(name = "Pedido")
 @Getter
 @NoArgsConstructor
 @EqualsAndHashCode (of = "id")

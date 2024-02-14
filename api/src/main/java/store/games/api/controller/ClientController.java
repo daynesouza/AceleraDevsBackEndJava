@@ -54,7 +54,7 @@ public class ClientController {
     }
 
     @GetMapping("/{cpf}")
-    public ResponseEntity detalhar(@PathVariable String cpf){
+    public ResponseEntity<TodosDadosCliente> detalhar(@PathVariable String cpf){
         var dados = listarDadosCliente.localizaCliente(cpf);
 
         return ResponseEntity.ok(dados);
