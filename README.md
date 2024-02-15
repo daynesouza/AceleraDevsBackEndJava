@@ -22,6 +22,7 @@ O desafio dessa edição foi a criação de uma API Rest, que fizesse a persist�
 ## 📄 Documentação
 
 A documentação das funcionalidades da aplicação pode ser acessada através do GitHub ou/e nos links abaixo:
+- Postman: https://www.postman.com/daynesouza/workspace/aceleradevs/collection/32814278-b26d00a2-f7ed-4727-8d38-263bfea0d986?action=share&creator=32814278&active-environment=32814278-1cd46fb4-0ec4-46a8-993a-66af27fe977e
 - GitHub: https://github.com/daynesouza/AceleraDevsBackEndJava
 - Swagger: http://localhost:8080/swagger-ui.html
 - Banco H2: http://localhost:8080/h2
