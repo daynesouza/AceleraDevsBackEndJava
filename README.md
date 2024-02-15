@@ -22,10 +22,10 @@ O desafio dessa edição foi a criação de uma API Rest, que fizesse a persist�
 ## 📄 Documentação
 
 A documentação das funcionalidades da aplicação pode ser acessada através do GitHub ou/e nos links abaixo:
-GitHub: https://github.com/daynesouza/AceleraDevsBackEndJava
-Swagger: http://localhost:8080/swagger-ui.html
-Banco H2: http://localhost:8080/h2
-SpringDoc: http://localhost:8080/v3/api-docs
+- GitHub: https://github.com/daynesouza/AceleraDevsBackEndJava
+- Swagger: http://localhost:8080/swagger-ui.html
+- Banco H2: http://localhost:8080/h2
+- SpringDoc: http://localhost:8080/v3/api-docs
 
 Obs.: Substituir o endereço "http://localhost:8080", pelo novo endereço da aplicação
 
