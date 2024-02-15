@@ -1,5 +1,6 @@
 package store.games.api.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,16 +28,21 @@ class RelatoriosControllerTest {
     @Autowired
     GerarRelatorio gerarRelatorio;
 
+    @Autowired
+    ObjectMapper objectMapper;
+
 //    @Test
 //    @DisplayName("Devolver código erro http 400 - TESTE NÃO FUNCIONA, RETORNA ERRO!")
 //    void listaCenario1() throws Exception{
-//        Error retornado : org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'store.games.api.controller.RelatoriosControllerTest': Unsatisfied dependency expressed through field 'dataJson': No qualifying bean of type 'org.springframework.boot.test.json.JacksonTester<store.games.api.domain.relatorios.DataJson>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+//        //Error retornado : org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'store.games.api.controller.RelatoriosControllerTest': Unsatisfied dependency expressed through field 'dataJson': No qualifying bean of type 'org.springframework.boot.test.json.JacksonTester<store.games.api.domain.relatorios.DataJson>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+//        var data = new DataJson(null);
 //
 //        var response = mvc
 //                .perform(
 //                        get("/relatorios")
 //                                .contentType(MediaType.APPLICATION_JSON)
-//                                .content("{\"date\": \"0\"}")
+//                                //.content("{\"date\": \"0\"}")
+//                                .content(objectMapper.writeValueAsString(data))
 //                )
 //                .andReturn().getResponse();
 //
