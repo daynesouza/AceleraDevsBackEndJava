@@ -45,6 +45,7 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 - **[Lombok](https://projectlombok.org)**
 - **[SpringDoc](https://springdoc.org/)**
 - **[Apache POI](https://poi.apache.org/)**
+- **[Spring Boot Starter Test (JUnit, Mockito, Hamcrest, Assertj)](https://spring.io/projects/spring-boot)**
 
 ---
 
