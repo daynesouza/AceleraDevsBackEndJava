@@ -1,17 +1,18 @@
 package store.games.api.controller;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import store.games.api.domain.estoque.DadosListagemEstoque;
 import store.games.api.domain.relatorios.DataJson;
 import store.games.api.domain.relatorios.GerarRelatorio;
 import store.games.api.domain.relatorios.RelatorioProdutosVendidos;
+import store.games.api.domain.relatorios.RelatorioProdutosVendidosDTO;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("relatorios")
@@ -20,9 +21,10 @@ public class RelatoriosController {
     GerarRelatorio gerarRelatorio;
 
     @GetMapping
-    public ResponseEntity<Page<RelatorioProdutosVendidos>> lista(@RequestBody DataJson date, Pageable paginacao){
-        gerarRelatorio.relatorioFinalProdutos(date);
+    public ResponseEntity<List<RelatorioProdutosVendidosDTO>> lista(@RequestBody DataJson date){
 
-        return null;
+        var relatorioDTO = gerarRelatorio.relatorioFinalProdutos(date);
+
+        return ResponseEntity.ok(relatorioDTO);
     }
 }

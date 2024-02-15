@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import store.games.api.domain.client.Client;
 import store.games.api.domain.itemPedido.DadosListagemItemPedido;
 import store.games.api.domain.itemPedido.ItemPedido;
@@ -17,6 +18,7 @@ import java.util.List;
 @Table(name = "pedidos")
 @Entity(name = "Pedido")
 @Getter
+@Setter
 @NoArgsConstructor
 @EqualsAndHashCode (of = "id")
 public class Pedido {

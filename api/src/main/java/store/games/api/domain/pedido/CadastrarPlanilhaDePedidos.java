@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -44,9 +45,12 @@ public class CadastrarPlanilhaDePedidos {
                 var codigoProduto = cells.get(0).getStringCellValue();
                 var cpfUsuario = String.valueOf( (int) cells.get(1).getNumericCellValue());
                 var quantidade = (int) cells.get(2).getNumericCellValue();
-                var data = cells.get(3).getDateCellValue();
+                var dataPlan = cells.get(3).getDateCellValue();
                 var listaitens = new ArrayList<ListaItens>();
                 listaitens.add( new ListaItens(codigoProduto, quantidade));
+
+                //Convertendo Date para LocalDate
+                var data = dataPlan.toInstant().atZone( ZoneId.systemDefault() ).toLocalDate();
 
                 pedidosRetorno.add(fazerPedido.cadastrarDadosPedido( new DadosPedido(cpfUsuario, data, listaitens)));
 

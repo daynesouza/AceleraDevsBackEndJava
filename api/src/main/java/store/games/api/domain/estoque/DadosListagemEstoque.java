@@ -2,7 +2,7 @@ package store.games.api.domain.estoque;
 import java.util.Date;
 
 public record DadosListagemEstoque(
-        String cod,
+        String produtoCod,
         int quantidade,
         Date data
 ){

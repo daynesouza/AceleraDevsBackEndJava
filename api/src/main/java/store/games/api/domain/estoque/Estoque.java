@@ -9,7 +9,7 @@ import store.games.api.domain.product.Product;
 import java.util.Date;
 
 @Table(name = "estoque")
-@Entity(name = "estoque")
+@Entity(name = "Estoque")
 @Getter
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
