@@ -72,10 +72,10 @@ public class GerarRelatorio {
                     item.setEstoque(est.quantidade());
                     if( item.getQuantidadeTotalVendida() / item.getEstoque() < 25){
                         item.setStatus("BAIXA_DEMANDA");
-                    } else if( item.getEstoque() < item.getQuantidadeTotalVendida() ){
-                        item.setStatus("QTD_DIVERGENTE");
-                    } else{
+                    } else if( item.getEstoque() >= item.getQuantidadeTotalVendida() ){
                         item.setStatus("OK");
+                    } else{
+                        item.setStatus("QTD_DIVERGENTE");
                     }
                 }
             });
