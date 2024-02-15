@@ -1,0 +1,439 @@
+{
+	"info": {
+		"_postman_id": "b26d00a2-f7ed-4727-8d38-263bfea0d986",
+		"name": "Requisições a API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32814278",
+		"_collection_link": "https://www.postman.com/daynesouza/workspace/aceleradevs/collection/32814278-b26d00a2-f7ed-4727-8d38-263bfea0d986?action=share&source=collection_link&creator=32814278"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Cadastrar Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"name\" : \"Maria Luiza\",\r\n    \"dta\": \"10/08/2000\",\r\n    \"cpf\": \"123456\",\r\n    \"cep\": \"20081000\"\r\n},\r\n{\r\n    \"name\" : \"Pedro Paulo\",\r\n    \"dta\": \"10/08/1995\",\r\n    \"cpf\": \"1234567\",\r\n    \"cep\": \"20081000\"\r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/client",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Maria Luiza Freitas\",\r\n    \"dta\": \"10/08/2000\",\r\n    \"cpf\": \"123456\",\r\n    \"cep\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/client",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhar cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/client/123456",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"client",
+								"123456"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/client",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desabilitar Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/client/123456",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"client",
+								"123456"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Documentação API (SpringDoc)",
+			"item": [
+				{
+					"name": "GetDoc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/v3/api-docs",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v3",
+								"api-docs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estoque",
+			"item": [
+				{
+					"name": "Cadastrar Estoque",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"cod\" : \"a\",\r\n    \"quantidade\": \"10\",\r\n    \"data\": \"01/01/2024\"\r\n},\r\n{\r\n     \"cod\" : \"ab\",\r\n    \"quantidade\": \"15\",\r\n    \"data\": \"01/02/2024\"\r\n},\r\n{\r\n     \"cod\" : \"abc\",\r\n    \"quantidade\": \"1\",\r\n    \"data\": \"01/02/2024\"\r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/estoque",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"estoque"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Estoque",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"cod\" : \"a\",\r\n    \"quantidade\": \"10\",\r\n    \"data\": \"01/01/2024\"\r\n},\r\n{\r\n     \"cod\" : \"ab\",\r\n    \"quantidade\": \"15\",\r\n    \"data\": \"01/02/2024\"\r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/estoque",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"estoque"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Relatório",
+			"item": [
+				{
+					"name": "Gerar relatório Mês",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"01/01/2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/relatorios",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"relatorios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "Cadastrar Pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"cpf\": \"1234\",\r\n    \"data\" : \"11/02/2023\",\r\n    \"listaItens\": [{\r\n        \"cod\": \"a\",\r\n        \"quantidade\": 2\r\n    },{\r\n        \"cod\": \"ab\",\r\n        \"quantidade\": 2          \r\n    }]\r\n},{\r\n    \"cpf\": \"12\",\r\n    \"data\" : \"01/01/2024\",\r\n    \"listaItens\": [{\r\n        \"cod\": \"abc\",\r\n        \"quantidade\": 4\r\n    },{\r\n        \"cod\": \"abcde\",\r\n        \"quantidade\": 5\r\n    }]\r\n},{\r\n    \"cpf\": \"1234\",\r\n    \"data\" : \"30/12/2023\",\r\n    \"listaItens\": [{\r\n        \"cod\": \"abcde\",\r\n        \"quantidade\": 2\r\n    }]\r\n},{\r\n    \"cpf\": \"12345\",\r\n    \"data\" : \"30/01/2024\",\r\n    \"listaItens\": [{\r\n        \"cod\": \"a\",\r\n        \"quantidade\": 4\r\n    }]\r\n},{\r\n    \"cpf\": \"1\",\r\n    \"data\" : \"15/01/2024\",\r\n    \"listaItens\": [{\r\n        \"cod\": \"abc\",\r\n        \"quantidade\": 8\r\n    }]\r\n},{\r\n    \"cpf\": \"1\",\r\n    \"data\" : \"17/01/2024\",\r\n    \"listaItens\": [{\r\n        \"cod\": \"abcd\",\r\n        \"quantidade\": 8\r\n    }]\r\n}]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/pedido",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Pedido XLSX",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "xlsx",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "xlsx",
+									"type": "file",
+									"src": "/D:/Programação/Projetos AceleraDevs/BackEnd/Projeto Final/planilha/planilha de dados.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/pedido-upload",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pedido-upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pedido",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Cadastrar Produto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n     \"cod\": \"abcdef\",\r\n    \"name\" : \"PalWorld\",    \r\n    \"preco\": \"70\"\r\n},\r\n{\r\n    \"cod\": \"abcdefg\",\r\n    \"name\" : \"Elden Ring\",    \r\n    \"preco\": \"100\"\r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/product",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Produto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cod\": \"abcdef\",\r\n    \"name\" : \"PalWorld\",    \r\n    \"preco\": \"75\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/product",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/product",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desabilitar produto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/product/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
